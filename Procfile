@@ -1,1 +1,1 @@
-“web: omelettebackend”
+web: omelettebackend
