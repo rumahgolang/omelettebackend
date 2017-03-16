@@ -1,0 +1,93 @@
+{
+	"ImportPath": "github.com/fajarpnugroho/omelettebackend",
+	"GoVersion": "go1.7",
+	"GodepVersion": "v79",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/astaxie/beego",
+			"Comment": "v1.7.1-2-gb635af5",
+			"Rev": "b635af5a8cd798ae9ede1adb6f9472fa87361168"
+		},
+		{
+			"ImportPath": "github.com/astaxie/beego/config",
+			"Comment": "v1.7.1-2-gb635af5",
+			"Rev": "b635af5a8cd798ae9ede1adb6f9472fa87361168"
+		},
+		{
+			"ImportPath": "github.com/astaxie/beego/context",
+			"Comment": "v1.7.1-2-gb635af5",
+			"Rev": "b635af5a8cd798ae9ede1adb6f9472fa87361168"
+		},
+		{
+			"ImportPath": "github.com/astaxie/beego/grace",
+			"Comment": "v1.7.1-2-gb635af5",
+			"Rev": "b635af5a8cd798ae9ede1adb6f9472fa87361168"
+		},
+		{
+			"ImportPath": "github.com/astaxie/beego/logs",
+			"Comment": "v1.7.1-2-gb635af5",
+			"Rev": "b635af5a8cd798ae9ede1adb6f9472fa87361168"
+		},
+		{
+			"ImportPath": "github.com/astaxie/beego/session",
+			"Comment": "v1.7.1-2-gb635af5",
+			"Rev": "b635af5a8cd798ae9ede1adb6f9472fa87361168"
+		},
+		{
+			"ImportPath": "github.com/astaxie/beego/toolbox",
+			"Comment": "v1.7.1-2-gb635af5",
+			"Rev": "b635af5a8cd798ae9ede1adb6f9472fa87361168"
+		},
+		{
+			"ImportPath": "github.com/astaxie/beego/utils",
+			"Comment": "v1.7.1-2-gb635af5",
+			"Rev": "b635af5a8cd798ae9ede1adb6f9472fa87361168"
+		},
+		{
+			"ImportPath": "github.com/fajarpnugroho/omelettebot/models",
+			"Rev": "f4ec1d3b86aad14f49871d8cce44766836b89191"
+		},
+		{
+			"ImportPath": "github.com/gopherjs/gopherjs/js",
+			"Rev": "acd7601d2a20b8dbef844f92b7bdb031f05f4442"
+		},
+		{
+			"ImportPath": "github.com/jtolds/gls",
+			"Comment": "v4.2.0",
+			"Rev": "8ddce2a84170772b95dd5d576c48d517b22cac63"
+		},
+		{
+			"ImportPath": "github.com/smartystreets/assertions",
+			"Comment": "1.6.0-14-g26acb92",
+			"Rev": "26acb9229f421449ac63d014995b282d59261a8b"
+		},
+		{
+			"ImportPath": "github.com/smartystreets/assertions/internal/go-render/render",
+			"Comment": "1.6.0-14-g26acb92",
+			"Rev": "26acb9229f421449ac63d014995b282d59261a8b"
+		},
+		{
+			"ImportPath": "github.com/smartystreets/assertions/internal/oglematchers",
+			"Comment": "1.6.0-14-g26acb92",
+			"Rev": "26acb9229f421449ac63d014995b282d59261a8b"
+		},
+		{
+			"ImportPath": "github.com/smartystreets/goconvey/convey",
+			"Comment": "1.6.2-13-g019319c",
+			"Rev": "019319c870f8f1d61dc9c34291abff5cd128b6e8"
+		},
+		{
+			"ImportPath": "github.com/smartystreets/goconvey/convey/gotest",
+			"Comment": "1.6.2-13-g019319c",
+			"Rev": "019319c870f8f1d61dc9c34291abff5cd128b6e8"
+		},
+		{
+			"ImportPath": "github.com/smartystreets/goconvey/convey/reporting",
+			"Comment": "1.6.2-13-g019319c",
+			"Rev": "019319c870f8f1d61dc9c34291abff5cd128b6e8"
+		}
+	]
+}
