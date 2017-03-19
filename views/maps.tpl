@@ -1,1 +1,22 @@
-<div id="map"></div>
+<div class="content">
+  <form method="post">
+      <div class="form-group">
+        <label>Search Place</label>
+        <input type="text" class="form-control"
+        placeholder="Type place name" name="keyword" value="{{.keyword}}"/>
+      </div>
+      <button type="submit" class="btn btn-info btn-fill pull-right">Submit</button>
+  </form>
+  <ul>
+    {{range $key, $val := .restaurant}}
+        <li>
+          <span>{{$val.Restaurant.Name}}</span>
+          <br/>
+                    <span>{{$val.Restaurant.Location.Address}}</span>
+          <p>
+            <button type="submit" class="btn btn-info btn-fill">Add to  omelette</button>
+          </p>
+        </li>
+    {{end}}
+    </ul>
+</div>
