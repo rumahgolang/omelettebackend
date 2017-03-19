@@ -38,4 +38,5 @@ func (c *PlacesController) Post() {
 	c.Data["titlePage"] = "Places"
 	c.Layout = "main.tpl"
 	c.TplName = "places.tpl"
+	c.Render()
 }
