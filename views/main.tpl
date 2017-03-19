@@ -58,9 +58,9 @@
                     </a>
                 </li>
                 <li class="{{.maps}}">
-                    <a href="maps">
+                    <a href="places">
                         <i class="pe-7s-map-marker"></i>
-                        <p>Maps</p>
+                        <p>Places</p>
                     </a>
                 </li>
                 <li class="{{.merchant}}">

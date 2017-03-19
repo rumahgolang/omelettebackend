@@ -9,7 +9,7 @@ func init() {
 	beego.Router("/", &controllers.MainController{})
 	beego.Router("/dashboard", &controllers.DashboarController{})
 	beego.Router("/merchant", &controllers.MerchantController{})
-	beego.Router("/maps", &controllers.MapsController{})
+	beego.Router("/places", &controllers.PlacesController{})
 	beego.Router("/category", &controllers.CategoryController{})
 	beego.Router("/menu", &controllers.MenuController{})
 }

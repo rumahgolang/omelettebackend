@@ -10,7 +10,7 @@
   <ul>
     {{range $key, $val := .restaurant}}
         <li>
-          <span>{{$val.Restaurant.Name}}</span>
+          <b><span>{{$val.Restaurant.Name}}</span></b>
           <br/>
                     <span>{{$val.Restaurant.Location.Address}}</span>
           <p>

@@ -29,7 +29,7 @@ func SearchRestaurantByKeyword(zomatoRestaurantResponse *models.ZomatoRestaurant
 	req.Header.Set("user-key", ZomatoAPIKey)
 
 	log.Printf("%s", req.Header.Get("user-key"))
-	log.Printf("%s", req.Header.Get("Accepnt"))
+	log.Printf("%s", req.Header.Get("Accept"))
 
 	if errRequest != nil {
 		log.Fatalln("NewRequest: ", errRequest)
