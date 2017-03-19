@@ -8,20 +8,11 @@ import (
 	"github.com/fajarpnugroho/omelettebackend/services"
 )
 
-type PlacesController struct {
+type ResultController struct {
 	beego.Controller
 }
 
-// Get Home page
-func (c *PlacesController) Get() {
-	c.Data["maps"] = "active"
-	c.Data["titlePage"] = "Places"
-	c.Layout = "main.tpl"
-	c.TplName = "places.tpl"
-}
-
-// Post Post home page
-func (c *PlacesController) Post() {
+func (c *ResultController) Post() {
 	data := models.Search{}
 	if err := c.ParseForm(&data); err != nil {
 		//handle error

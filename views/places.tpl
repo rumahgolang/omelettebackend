@@ -1,5 +1,5 @@
 <div class="content">
-  <form method="post">
+  <form method="post" action="/result">
       <div class="form-group">
         <label>Search Place</label>
         <input type="text" class="form-control"
