@@ -12,7 +12,8 @@ import (
 
 const (
 	// ZomatoAPIKey Zomato API KEY
-	ZomatoAPIKey = "a1347a781d0a95790bb433514d6a3370"
+	ZomatoAPIKey     = "a1347a781d0a95790bb433514d6a3370"
+	ZomatoAPIKeyProd = "8f579904c450d535003969488316607c"
 )
 
 // SearchRestaurantByKeyword Search restaurant using keyword in zomato
@@ -26,7 +27,7 @@ func SearchRestaurantByKeyword(zomatoRestaurantResponse *models.ZomatoRestaurant
 	req, errRequest := http.NewRequest("GET", urlString, nil)
 
 	req.Header.Set("Accept", "application/json")
-	req.Header.Set("user-key", ZomatoAPIKey)
+	req.Header.Set("user-key", ZomatoAPIKeyProd)
 
 	log.Printf("%s", req.Header.Get("user-key"))
 	log.Printf("%s", req.Header.Get("Accept"))
