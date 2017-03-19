@@ -19,7 +19,7 @@ const (
 func SearchRestaurantByKeyword(zomatoRestaurantResponse *models.ZomatoRestaurantResponse, keyword string) {
 	log.Printf("%s", keyword)
 
-	urlString := fmt.Sprintf("https://developers.zomato.com/api/v2.1/search?q=%s&count=5", url.QueryEscape(keyword))
+	urlString := fmt.Sprintf("https://developers.zomato.com/api/v2.1/search?q=%s", url.QueryEscape(keyword))
 
 	log.Printf("%s", urlString)
 

@@ -5,6 +5,7 @@ type ZomatoRestaurantResponse struct {
 	Restaurants []ItemRestaurant `json:"restaurants"`
 }
 
+// ItemRestaurant item restaurant
 type ItemRestaurant struct {
 	Restaurant Restaurant `json:"restaurant"`
 }
@@ -18,8 +19,5 @@ type Restaurant struct {
 
 // Location location entity
 type Location struct {
-	Address   string `json:"address"`
-	Locality  string `json:"locality"`
-	Latitude  string `json:"latitude"`
-	Longitude string `json:"longitude"`
+	Address string `json:"address"`
 }
