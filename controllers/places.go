@@ -31,6 +31,10 @@ func (c *PlacesController) Post() {
 	var zomatoResponse models.ZomatoRestaurantResponse
 	services.SearchRestaurantByKeyword(&zomatoResponse, data.Keyword)
 
+	for _, item := range zomatoResponse.Restaurants {
+		log.Printf("%s", item.Restaurant.Name)
+	}
+
 	c.Data["restaurant"] = zomatoResponse.Restaurants
 
 	c.Data["keyword"] = data.Keyword
