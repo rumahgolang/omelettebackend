@@ -44,6 +44,11 @@ func SearchRestaurantByKeyword(zomatoRestaurantResponse *models.ZomatoRestaurant
 		return
 	}
 
+	if resp.StatusCode > 200 {
+		log.Println("Response unsuccessful")
+		return
+	}
+
 	defer resp.Body.Close()
 
 	if errDecoder := json.NewDecoder(resp.Body).Decode(&zomatoRestaurantResponse); errDecoder != nil {
