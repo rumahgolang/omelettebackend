@@ -1,8 +1,10 @@
 package services
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"net/http"
 
@@ -107,4 +109,48 @@ func GetMenuByCategory(menus *models.Menus, menuCategoryId string) {
 		log.Fatalln(errDecoder)
 		return
 	}
+}
+
+// AddedNewMerchant add new merchant to omelette
+func AddedNewMerchant(merchant *models.Merchant) error {
+	url := "https://powerful-river-36528.herokuapp.com/api/v1/merchant/register"
+
+	var jsonStr = []byte(`{"name":"` + merchant.Name + `",
+	"range_price":"` + merchant.RangePrice + `",
+	"location":"` + merchant.Location + `",
+	"pict":"",
+	"open_close_info":"` + merchant.OpenCloseInfo + `",
+	"latitude":` + fmt.Sprintf("%f", merchant.Latitude) + `,
+	"longitude":` + fmt.Sprintf("%f", merchant.Longitude) + `}`)
+
+	log.Printf("%s", jsonStr)
+
+	req, errRequest := http.NewRequest("POST", url, bytes.NewBuffer(jsonStr))
+	req.Header.Set("Content-Type", "application/json")
+
+	if errRequest != nil {
+		log.Fatalln("NewRequest: ", errRequest)
+		return errRequest
+	}
+
+	client := &http.Client{}
+
+	resp, errResponse := client.Do(req)
+	if errResponse != nil {
+		log.Fatalln("Do: ", errResponse)
+		return errResponse
+	}
+
+	defer resp.Body.Close()
+
+	body, errRead := ioutil.ReadAll(resp.Body)
+
+	if errRead != nil {
+		log.Fatalln("Read: ", errRead)
+		return errRead
+	}
+
+	fmt.Println("response Body:", string(body))
+
+	return nil
 }

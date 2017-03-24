@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<link rel="icon" type="image/png" href="static/img/favicon.ico">
+	<link rel="icon" type="image/png" href="/static/img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 	<title>Light Bootstrap Dashboard by Creative Tim</title>
@@ -12,29 +12,29 @@
 
 
     <!-- Bootstrap core CSS     -->
-    <link href="static/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Animation library for notifications   -->
-    <link href="static/css/animate.min.css" rel="stylesheet"/>
+    <link href="/static/css/animate.min.css" rel="stylesheet"/>
 
     <!--  Light Bootstrap Table core CSS    -->
-    <link href="static/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
+    <link href="/static/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
 
 
     <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="static/css/demo.css" rel="stylesheet" />
+    <link href="/static/css/demo.css" rel="stylesheet" />
 
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
-    <link href="static/css/pe-icon-7-stroke.css" rel="stylesheet" />
+    <link href="/static/css/pe-icon-7-stroke.css" rel="stylesheet" />
 
 </head>
 <body>
 
 <div class="wrapper">
-    <div class="sidebar" data-color="purple" data-image="static/img/sidebar-5.jpg">
+    <div class="sidebar" data-color="purple" data-image="/static/img/sidebar-5.jpg">
 
     <!--
 
@@ -52,31 +52,31 @@
 
             <ul class="nav">
                 <li class="{{.dashboard}}">
-                    <a href="dashboard">
+                    <a href="/dashboard">
                         <i class="pe-7s-graph"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li class="{{.maps}}">
-                    <a href="places">
+                    <a href="/places">
                         <i class="pe-7s-map-marker"></i>
                         <p>Places</p>
                     </a>
                 </li>
                 <li class="{{.merchant}}">
-                    <a href="merchant">
+                    <a href="/merchant">
                         <i class="pe-7s-note2"></i>
                         <p>Merchant</p>
                     </a>
                 </li>
                 <li class="{{.category}}">
-                    <a href="category">
+                    <a href="/category">
                         <i class="pe-7s-albums"></i>
                         <p>Category Menu</p>
                     </a>
                 </li>
                 <li class="{{.menu}}">
-                    <a href="menu">
+                    <a href="/menu">
                         <i class="pe-7s-menu"></i>
                         <p>Menus</p>
                     </a>
@@ -121,48 +121,19 @@
 </body>
 
     <!--   Core JS Files   -->
-    <script src="static/js/jquery-1.10.2.js" type="text/javascript"></script>
-	<script src="static/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/static/js/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="/static/js/bootstrap.min.js" type="text/javascript"></script>
 
 	<!--  Checkbox, Radio & Switch Plugins -->
-	<script src="static/js/bootstrap-checkbox-radio-switch.js"></script>
+	<script src="/static/js/bootstrap-checkbox-radio-switch.js"></script>
 
 	<!--  Charts Plugin -->
-	<script src="static/js/chartist.min.js"></script>
+	<script src="/static/js/chartist.min.js"></script>
 
     <!--  Notifications Plugin    -->
-    <script src="static/js/bootstrap-notify.js"></script>
-
-    <!--  Google Maps Plugin    -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="/static/js/bootstrap-notify.js"></script>
 
     <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
-	<script src="static/js/light-bootstrap-dashboard.js"></script>
-
-	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
-	<script src="static/js/demo.js"></script>
-
-	<!-- <script type="text/javascript">
-    	$(document).ready(function(){
-
-        	demo.initChartist();
-
-        	$.notify({
-            	icon: 'pe-7s-gift',
-            	message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
-
-            },{
-                type: 'info',
-                timer: 4000
-            });
-
-    	});
-	</script> -->
-
-	<script>
-        $().ready(function(){
-            demo.initGoogleMaps();
-        });
-    </script>
+	<script src="/static/js/light-bootstrap-dashboard.js"></script>
 
 </html>
