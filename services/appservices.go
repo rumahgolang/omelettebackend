@@ -111,6 +111,32 @@ func GetMenuByCategory(menus *models.Menus, menuCategoryId string) {
 	}
 }
 
+// GetAllMerchant get all merchants
+func GetAllMerchant(merchants *models.Merchants) {
+	url := "https://powerful-river-36528.herokuapp.com/api/v1/merchants"
+	req, errRequest := http.NewRequest("GET", url, nil)
+
+	if errRequest != nil {
+		log.Fatalln("NewRequest: ", errRequest)
+		return
+	}
+
+	client := &http.Client{}
+
+	resp, errResponse := client.Do(req)
+	if errResponse != nil {
+		log.Fatalln("Do: ", errResponse)
+		return
+	}
+
+	defer resp.Body.Close()
+
+	if errDecoder := json.NewDecoder(resp.Body).Decode(&merchants); errDecoder != nil {
+		log.Fatalln(errDecoder)
+		return
+	}
+}
+
 // AddedNewMerchant add new merchant to omelette
 func AddedNewMerchant(merchant *models.Merchant) error {
 	url := "https://powerful-river-36528.herokuapp.com/api/v1/merchant/register"

@@ -9,12 +9,23 @@ import (
 	"github.com/fajarpnugroho/omelettebot/models"
 )
 
+// MerchantController constructor
 type MerchantController struct {
 	beego.Controller
 }
 
 // Get Index
 func (c *MerchantController) Get() {
+
+	var merchants models.Merchants
+	services.GetAllMerchant(&merchants)
+
+	// log.Println(merchants)
+
+	isSaved, _ := c.GetBool("saved", false)
+
+	c.Data["isSaved"] = isSaved
+	c.Data["merchants"] = merchants
 	c.Data["merchant"] = "active"
 	c.Data["titlePage"] = "Merchant"
 	c.Layout = "main.tpl"
@@ -55,16 +66,13 @@ func (c *MerchantController) SaveMerchant() {
 		Longitude:     longitude,
 	}
 
-	log.Println(merchant)
+	// log.Println(merchant)
 
 	errAdd := services.AddedNewMerchant(merchant)
 
 	if errAdd != nil {
 		log.Println(errAdd)
+	} else {
+		c.Redirect("/merchant?saved=true", 302)
 	}
-
-	c.Data["merchant"] = "active"
-	c.Data["titlePage"] = "Data Saved"
-	c.Layout = "main.tpl"
-	c.TplName = "merchant.tpl"
 }
