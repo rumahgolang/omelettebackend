@@ -10,7 +10,7 @@
                             <div class="content table-responsive table-full-width">
                                 <table class="table table-hover table-striped">
                                     <thead>
-                                        <th>ID</th>
+                                      <th>ID</th>
                                     	<th>Name</th>
                                     	<th>Location</th>
                                     	<th>Action</th>
@@ -21,7 +21,9 @@
                                         	<td>{{$val.ID}}</td>
                                         	<td>{{$val.Name}}</td>
                                         	<td>{{$val.Location}}</td>
-                                        	<td>Edit</td>
+                                        	<td>
+                                            Edit<br/>
+                                            <a href="/category/{{$val.ID}}">Added Menu</a></td>
                                         </tr>
                                       {{end}}
                                     </tbody>

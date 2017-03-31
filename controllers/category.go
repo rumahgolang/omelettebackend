@@ -33,6 +33,7 @@ func (c *CategoryController) ShowCategoryForm() {
 	c.Data["merchantId"] = merchantID
 }
 
+// Add add new category
 func (c *CategoryController) Add() {
 	log.Println("Add Category")
 	c.Data["category"] = "active"
@@ -40,11 +41,19 @@ func (c *CategoryController) Add() {
 	c.Layout = "main.tpl"
 	c.TplName = "category.tpl"
 
-	cat := models.Category{}
-	if err := c.ParseForm(&cat); err != nil {
-		//handle error
-		c.Ctx.ResponseWriter.Write(utils.STR_ERROR_REQUEST_INVALID)
-		return
+	// cat := models.MenuCategory{}
+	// if err := c.ParseForm(&cat); err != nil {
+	// 	//handle error
+	// 	c.Ctx.ResponseWriter.Write(utils.STR_ERROR_REQUEST_INVALID)
+	// 	return
+	// }
+
+	categoryName := c.GetString("category_name", "")
+	merchantID, _ := strconv.ParseInt(c.Ctx.Input.Param(":merchantid"), 10, 64)
+
+	cat := models.MenuCategory{
+		MerchantID: merchantID,
+		Name:       categoryName,
 	}
 
 	errResp := services.AddedNewCategory(&cat)
@@ -53,13 +62,14 @@ func (c *CategoryController) Add() {
 		c.Ctx.ResponseWriter.Write(utils.STR_CATEGORY_RESPONSE_ERROR_ADD_CATEGORY)
 		return
 	}
-	c.Ctx.ResponseWriter.Write(utils.STR_RESPONSE_OK)
+
+	c.Redirect("/category/"+c.Ctx.Input.Param(":merchantid")+"?saved=true", 302)
 }
 
+// GetAllMenuByMerchantId get all category menu by merchant_id
 func (c *CategoryController) GetAllMenuByMerchantId() {
-	log.Println("Get All Menu By Merchant")
+	log.Println("Get All Category Menu By Merchant")
 	c.Data["category"] = "active"
-	c.Data["titlePage"] = "Category Menu"
 	c.Layout = "main.tpl"
 	c.TplName = "category.tpl"
 
@@ -71,6 +81,10 @@ func (c *CategoryController) GetAllMenuByMerchantId() {
 		c.Ctx.ResponseWriter.Write(utils.STR_CATEGORY_RESPONSE_ERROR_GET_CATEGORIES)
 		return
 	}
+
+	merchant, _ := services.GetDetailMerchant(merchantID)
+	c.Data["titlePage"] = merchant.Name
+	c.Data["merchant"] = merchant
 	c.Data["listCategories"] = listCategory
 }
 
@@ -84,9 +98,9 @@ func (c *CategoryController) UpdateCategoryByMerchantId() {
 	merchantID := c.Ctx.Input.Param(":merchantid")
 	categoryID := c.Ctx.Input.Param(":categoryid")
 
-	cat := models.Category{}
-	cat.Id, _ = strconv.Atoi(categoryID)
-	cat.MerchantId, _ = strconv.Atoi(merchantID)
+	cat := models.MenuCategory{}
+	cat.ID, _ = strconv.ParseInt(categoryID, 10, 64)
+	cat.MerchantID, _ = strconv.ParseInt(merchantID, 10, 64)
 
 	if err := c.ParseForm(&cat); err != nil {
 		//handle error
@@ -113,9 +127,9 @@ func (c *CategoryController) DeleteCategoryByMerchantId() {
 	merchantID := c.Ctx.Input.Param(":merchantid")
 	categoryID := c.Ctx.Input.Param(":categoryid")
 
-	cat := models.Category{}
-	cat.Id, _ = strconv.Atoi(categoryID)
-	cat.MerchantId, _ = strconv.Atoi(merchantID)
+	cat := models.MenuCategory{}
+	cat.ID, _ = strconv.ParseInt(categoryID, 10, 64)
+	cat.MerchantID, _ = strconv.ParseInt(merchantID, 10, 64)
 
 	errQuery := services.DeleteCategoryByMerchantId(&cat)
 
