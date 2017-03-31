@@ -1,5 +1,6 @@
 package models
 
+// Merchant struct of merchant
 type Merchant struct {
 	ID            int64   `json:"id"`
 	Name          string  `json:"name"`
